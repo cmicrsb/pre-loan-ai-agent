@@ -7,7 +7,7 @@ An automated pre-evaluation workflow for loan applications: it checks the data, 
 - **Context:** Demo built for my application to Fuse (Agentic Deployment Manager)
 - **▶️ Video demo (2:15):** [Watch on Loom](https://www.loom.com/share/b5f9f3c9e8d14882ab25d8caefe0ccbf)
 
-![Make scenario](01-make-scenario.png)
+![Make scenario](screenshots/01-make-scenario.png)
 
 ---
 
@@ -43,8 +43,9 @@ flowchart LR
 4. **Audit trail:** every application is logged in Google Sheets with the decision, DTI, reason, status, action taken, and a one-line agent note, whatever the outcome.
 5. **Routing:** a Make router sends the email to the applicant or escalates the case to an underwriter.
 
-![Google Form](02-form.png)
-![Applications log in Google Sheets](03-sheet.png)
+<img src="screenshots/02-form.png" alt="Google Form" width="50%">
+
+![Applications log in Google Sheets](screenshots/03-sheet.png)
 
 ---
 
@@ -66,8 +67,8 @@ DTI = monthly debt ÷ monthly income. Loan-to-income = loan amount ÷ monthly in
 
 **Design decision: human-in-the-loop for the gray zone.** Anything in REVIEW is escalated to an underwriter with the case summary. The agent handles the clear cases; people make the judgment calls.
 
-![Email to applicant](04-email-applicant.png)
-![Escalation to underwriter](05-email-escalation.png)
+![Email to applicant](screenshots/04-email-applicant.png)
+![Escalation to underwriter](screenshots/05-email-escalation.png)
 
 ---
 
@@ -79,7 +80,7 @@ Issues I caught and fixed while testing:
 - **All four paths tested end to end:** approved, rejected, document request, and escalation, from form submission to the email landing in the inbox.
 - **Policy change re-tested:** after moving the REVIEW ceiling to 45%, I re-ran borderline cases to confirm the new threshold.
 
-![Prompt with few-shot example](06-prompt.png)
+![Prompt with few-shot example](screenshots/06-prompt.png)
 
 ---
 
